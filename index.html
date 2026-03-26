@@ -12,6 +12,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="portfolio.png">
     <style>
+        /* VIDEO BACKGROUND */
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.75) contrast(1.1);
+}
+
+/* PARTICLES BACKGROUND */
+#network-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    mix-blend-mode: screen;
+}
+
+/* DARK OVERLAY (optional but recommended) */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+        #network-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body {
+    background: black;
+    margin: 0;
+}
+
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -723,6 +776,12 @@
     </style>
 </head>
 <body>
+    
+</video>
+
+<div id="network-background"></div>
+
+    <canvas id="network-background"></canvas> 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
@@ -771,85 +830,138 @@ I enjoy diving deep into how systems work—analyzing weaknesses, exploring atta
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="skills" id="skills">
-            <h2 class="section-heading">My Skills</h2>
-            <div class="skills-container">
-                <h3 class="subheading">Technical Skills</h3>
-                <div class="skills-grid">
-    <div class="technical-skill-item">
-        <i class="fab fa-python"></i>
-        <p>Python</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-terminal"></i>
-        <p>Linux</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-network-wired"></i>
-        <p>Network Security</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-bug"></i>
-        <p>Web Security</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-shield-alt"></i>
-        <p>Vulnerability Analysis</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-user-secret"></i>
-        <p>Penetration Testing</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-search"></i>
-        <p>Nmap</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-spider"></i>
-        <p>Burp Suite</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-project-diagram"></i>
-        <p>Wireshark</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-bolt"></i>
-        <p>Metasploit</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-code"></i>
-        <p>C++</p>
-    </div>
-    <div class="technical-skill-item">
-        <i class="fas fa-database"></i>
-        <p>SQL</p>
-    </div>
-</div>
-            </div>
-            <div class="skills-container">
-                <h3 class="subheading">Soft Skills</h3>
-                <div class="skills-grid">
-                    <div class="soft-skill-item">
-                        <i class="fas fa-star"></i>
-                        <p>Leadership and Influence</p>
-                    </div>
-                    <div class="soft-skill-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <p>Problem-Solving and Critical Thinking</p>
-                    </div>
-                    <div class="soft-skill-item">
-                        <i class="fas fa-users"></i>
-                        <p>Collaboration and Teamwork</p>
-                    </div>
-                    <div class="soft-skill-item">
-                        <i class="fas fa-comments"></i>
-                        <p>Communication</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+       <!-- Skills Section -->
+<section class="skills" id="skills">
+    <h2 class="section-heading">My Skills</h2>
 
+    <!-- Programming -->
+    <div class="skills-container">
+        <h3 class="subheading">Programming</h3>
+        <div class="skills-grid">
+
+            <div class="technical-skill-item">
+                <i class="fab fa-python"></i>
+                <p>Python</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-code"></i>
+                <p>C++</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-database"></i>
+                <p>SQL</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-code"></i>
+                <p>HTML</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-code"></i>
+                <p>CSS</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-code"></i>
+                <p>JavaScript</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Cybersecurity -->
+    <div class="skills-container">
+        <h3 class="subheading">Cybersecurity</h3>
+        <div class="skills-grid">
+
+            <div class="technical-skill-item">
+                <i class="fas fa-network-wired"></i>
+                <p>Network Security</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-bug"></i>
+                <p>Web Application Security</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-shield-alt"></i>
+                <p>Vulnerability Assessment</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-user-secret"></i>
+                <p>Penetration Testing (Basic)</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skills-container">
+        <h3 class="subheading">Tools & Technologies</h3>
+        <div class="skills-grid">
+
+            <div class="technical-skill-item">
+                <i class="fas fa-terminal"></i>
+                <p>Linux</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-search"></i>
+                <p>Nmap</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-spider"></i>
+                <p>Burp Suite</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-project-diagram"></i>
+                <p>Wireshark</p>
+            </div>
+
+            <div class="technical-skill-item">
+                <i class="fas fa-bolt"></i>
+                <p>Metasploit</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="skills-container">
+        <h3 class="subheading">Soft Skills</h3>
+        <div class="skills-grid">
+
+            <div class="soft-skill-item">
+                <i class="fas fa-brain"></i>
+                <p>Analytical Thinking</p>
+            </div>
+
+            <div class="soft-skill-item">
+                <i class="fas fa-bolt"></i>
+                <p>Problem Solving</p>
+            </div>
+
+            <div class="soft-skill-item">
+                <i class="fas fa-users"></i>
+                <p>Team Collaboration</p>
+            </div>
+
+            <div class="soft-skill-item">
+                <i class="fas fa-comments"></i>
+                <p>Technical Communication</p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
        <!-- Experience Section -->
 <section class="experience" id="experience">
     <h2 class="section-heading">Practical Experience</h2>
@@ -954,38 +1066,61 @@ I enjoy diving deep into how systems work—analyzing weaknesses, exploring atta
                 </div>
                 </div>
         </section>
-               <!-- Portfolio Section -->
-        <section class="portfolio" id="portfolio">
-            <h2 class="section-heading">My Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="FaceSePay.png" alt="FaceSePay">
-                    <div class="portfolio-overlay">
-                        <h3>FaceSePay</h3>
-                        <p>Secure Online Transaction System:
-is a smart payment system where your face is the key.
-Instead of passwords or OTPs, the system uses your live webcam to verify your identity before allowing transactions.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/theillogicalraaj/FaceSePay" target="_blank">Live Demo</a>
-                            <a href="https://github.com/theillogicalraaj/FaceSePay" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="Weat.jpg" alt="Autonomous Navigation">
-                    <div class="portfolio-overlay">
-                        <h3>Weather Apk</h3>
-                        <p>A modern weather application that provides real-time weather updates, 
-            temperature, humidity, and forecast data for any location using live APIs. 
-            Designed with a clean UI for quick and accurate weather insights.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/theillogicalraaj/theillogicalraaj" target="_blank">Live Demo</a>
-                            <a href="https://github.com/theillogicalraaj/theillogicalraaj" target="_blank">Code</a>
-                        </div>
-                    </div>
+         <!-- Portfolio Section -->
+<section class="portfolio" id="portfolio">
+    <h2 class="section-heading">My Projects</h2>
+
+    <div class="portfolio-grid">
+
+        <!-- 1st Project -->
+        <div class="portfolio-item">
+            <img src="FacesePay.png" alt="FaceSePay">
+            <div class="portfolio-overlay">
+                <h3>FaceSePay</h3>
+                <p>
+Secure Online Transaction System where your face is used for authentication instead of passwords or OTPs.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/theillogicalraaj/FaceSePay" target="_blank">Live Demo</a>
+                    <a href="https://github.com/theillogicalraaj/FaceSePay" target="_blank">Code</a>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- 2nd Project -->
+        <div class="portfolio-item">
+            <img src="Weat.jpg" alt="Weather App">
+            <div class="portfolio-overlay">
+                <h3>Weather Apk</h3>
+                <p>
+Real-time weather app showing temperature, humidity, and forecasts using live API data with clean UI.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/theillogicalraaj/theillogicalraaj" target="_blank">Live Demo</a>
+                    <a href="https://github.com/theillogicalraaj/theillogicalraaj" target="_blank">Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd Project -->
+        <div class="portfolio-item">
+            <img src="NeuroStrike.png" alt="Demo Project 1">
+            <div class="portfolio-overlay">
+                <h3>Neurostrike-omega-behavioral-authentication</h3>
+                <p>
+A browser-based system that analyzes typing patterns to verify user identity in real-time using behavioral biometrics.
+                </p>
+                <div class="project-links">
+                    <a href="#" target="https://theillogicalraaj.github.io/neurostrike-omega-behavioral-authentication/">Live Demo</a>
+                    <a href="#" target="https://github.com/theillogicalraaj/neurostrike-omega-behavioral-authentication">Code</a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+</section>
 
         <!-- Contact Section -->
         <section class="contact" id="contact">
@@ -1056,5 +1191,112 @@ Instead of passwords or OTPs, the system uses your live webcam to verify your id
             });
         });
     </script>
+    <script>
+const canvas = document.getElementById('network-background');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const nodes = [];
+const nodeCount = 60;
+const connectionDistance = 150;
+
+for (let i = 0; i < nodeCount; i++) {
+    nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5),
+        vy: (Math.random() - 0.5),
+        radius: 2
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // move nodes
+    nodes.forEach(n => {
+        n.x += n.vx;
+        n.y += n.vy;
+
+        if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+        if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+    });
+
+    // draw lines
+    for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+            let dx = nodes[i].x - nodes[j].x;
+            let dy = nodes[i].y - nodes[j].y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+
+            if (dist < connectionDistance) {
+                ctx.strokeStyle = "rgba(0,255,0,0.6)";
+                ctx.beginPath();
+                ctx.moveTo(nodes[i].x, nodes[i].y);
+                ctx.lineTo(nodes[j].x, nodes[j].y);
+                ctx.stroke();
+            }
+        }
+    }
+
+    // draw dots
+    nodes.forEach(n => {
+        ctx.fillStyle = "#00ff41";
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.radius, 0, Math.PI*2);
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+particlesJS("network-background", {
+  particles: {
+    number: { value: 100 },
+    color: { value: "#00ff88" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#00ff88",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" }
+    },
+    modes: {
+      grab: {
+        distance: 200,
+        line_linked: { opacity: 1 }
+      },
+      push: { particles_nb: 5 }
+    }
+  },
+  retina_detect: true
+});
+</script>
 </body>
 </html>
